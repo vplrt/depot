@@ -31,7 +31,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart}
+        format.html { redirect_to store_url }
+        format.js { @current_item = @line_item }
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { render action: 'new' }
@@ -57,10 +58,9 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item = LineItem.find(params[:id])
     @line_item.destroy
     respond_to do |format|
-     format.html { redirect_to(@line_item.cart, :notice => 'Item has been removed from your cart.') }
+      format.html { redirect_to line_items_url }
       format.json { head :no_content }
     end
   end
