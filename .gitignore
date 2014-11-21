@@ -9,6 +9,9 @@
 /log/*.log
 /tmp
 
+# Игнорирование конфигов. smpt настройки например
+/config/environments
+
 # Игнорирование прочих ненужных файлов.
 database.yml
 doc/
