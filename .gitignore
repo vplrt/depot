@@ -10,7 +10,7 @@
 /tmp
 
 # Игнорирование конфигов. smpt настройки например
-/config/environments/*.rb
+/config/environments
 
 # Игнорирование прочих ненужных файлов.
 database.yml
